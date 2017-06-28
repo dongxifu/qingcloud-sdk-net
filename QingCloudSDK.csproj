@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1D8E1A7-BA58-4B7D-9A88-0BBDDBB68C22}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QingStorIaasSDK</RootNamespace>
+    <AssemblyName>QingStorIaasSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>package\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>package\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Attribute\ParamAttribute.cs" />
+    <Compile Include="src\Yaml\Custom\BlockScalarModifier.cs" />
+    <Compile Include="src\Yaml\Custom\ChompingMethod.cs" />
+    <Compile Include="src\Yaml\Custom\MappingEntry.cs" />
+    <Compile Include="src\Yaml\Custom\Scalar.cs" />
+    <Compile Include="src\Yaml\Custom\YamlDocument.cs" />
+    <Compile Include="src\Yaml\Pair.cs" />
+    <Compile Include="src\Yaml\ParserCustom.cs" />
+    <Compile Include="src\Yaml\ParserInput.cs" />
+    <Compile Include="src\Yaml\Syntax\BlockScalarModifier.cs" />
+    <Compile Include="src\Yaml\Syntax\DataItem.cs" />
+    <Compile Include="src\Yaml\Syntax\Directive.cs" />
+    <Compile Include="src\Yaml\Syntax\GlobalTagPrefix.cs" />
+    <Compile Include="src\Yaml\Syntax\LocalTagPrefix.cs" />
+    <Compile Include="src\Yaml\Syntax\Mapping.cs" />
+    <Compile Include="src\Yaml\Syntax\MappingEntry.cs" />
+    <Compile Include="src\Yaml\Syntax\NamedTagHandle.cs" />
+    <Compile Include="src\Yaml\Syntax\NodeProperty.cs" />
+    <Compile Include="src\Yaml\Syntax\NonSpecificTag.cs" />
+    <Compile Include="src\Yaml\Syntax\PrimaryTagHandle.cs" />
+    <Compile Include="src\Yaml\Syntax\ReservedDirective.cs" />
+    <Compile Include="src\Yaml\Syntax\Scalar.cs" />
+    <Compile Include="src\Yaml\Syntax\SecondaryTagHandle.cs" />
+    <Compile Include="src\Yaml\Syntax\Sequence.cs" />
+    <Compile Include="src\Yaml\Syntax\ShorthandTag.cs" />
+    <Compile Include="src\Yaml\Syntax\Tag.cs" />
+    <Compile Include="src\Yaml\Syntax\TagDirective.cs" />
+    <Compile Include="src\Yaml\Syntax\TagHandle.cs" />
+    <Compile Include="src\Yaml\Syntax\TagPrefix.cs" />
+    <Compile Include="src\Yaml\Syntax\VerbatimTag.cs" />
+    <Compile Include="src\Yaml\Syntax\YamlDirective.cs" />
+    <Compile Include="src\Yaml\Syntax\YamlDocument.cs" />
+    <Compile Include="src\Yaml\Syntax\YamlStream.cs" />
+    <Compile Include="src\Yaml\Syntax\YamlVersion.cs" />
+    <Compile Include="src\Yaml\TextInput.cs" />
+    <Compile Include="src\Yaml\TextParserCommon.cs" />
+    <Compile Include="src\Yaml\YamlParser.cs" />
+    <Compile Include="src\Config\Config.cs" />
+    <Compile Include="src\Constants\Constant.cs" />
+    <Compile Include="src\Exception\Exception.cs" />
+    <Compile Include="src\Model\OutputModel.cs" />
+    <Compile Include="src\Model\RequestInputModel.cs" />
+    <Compile Include="src\Model\ResponseCallbackModel.cs" />
+    <Compile Include="src\Request\ParamValidate.cs" />
+    <Compile Include="src\Request\HttpRequestClient.cs" />
+    <Compile Include="src\Request\Request.cs" />
+    <Compile Include="src\Request\ResourceRequest.cs" />
+    <Compile Include="src\Request\ResourceRequestFactory.cs" />
+    <Compile Include="src\Request\ResponseCallBack.cs" />
+    <Compile Include="src\Service\Instance.cs" />
+    <Compile Include="src\Service\UserData.cs" />
+    <Compile Include="src\Service\Volume.cs" />
+    <Compile Include="src\Service\Vxnets.cs" />
+    <Compile Include="src\Utils\Base64.cs" />
+    <Compile Include="src\Utils\JSONUtil.cs" />
+    <Compile Include="src\Utils\LoggerUtil.cs" />
+    <Compile Include="src\Utils\ParamInvokeUtil.cs" />
+    <Compile Include="src\Utils\SignatureUtil.cs" />
+    <Compile Include="src\Utils\StringUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
