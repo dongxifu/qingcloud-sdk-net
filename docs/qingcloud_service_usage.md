@@ -30,10 +30,10 @@ Instance.DescribeInstancesOutput output = new Instance.DescribeInstancesOutput()
 output = intance.DescribeInstances(input);
 
 // Print the return code.
-Console.WriteLine (output.getRet_code());
+Console.WriteLine (output.getRetCode());
 
 // Print the first instance ID.
-Console.WriteLine (output.getInstance_id()[0]);
+Console.WriteLine (output.getInstanceId()[0]);
 ```
 
 RunInstances
