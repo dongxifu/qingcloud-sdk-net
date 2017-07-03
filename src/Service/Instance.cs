@@ -537,7 +537,7 @@ namespace QingCloudSDK.service
             }
 
             private String loginPassword;
-            [Param(paramType = "header", paramName = "login_password")]
+            [Param(paramType = "header", paramName = "login_passwd")]
             public String getLoginPassword()
             {
                 return this.loginPassword;
@@ -579,7 +579,7 @@ namespace QingCloudSDK.service
                 return this.volumes;
             }
 
-            public void setimageId(String[] volumes)
+            public void setVolumes(String[] volumes)
             {
                 this.volumes = volumes;
             }
@@ -742,7 +742,6 @@ namespace QingCloudSDK.service
 
             public override String validateParam()
             {
-
                 return null;
             }
         }
